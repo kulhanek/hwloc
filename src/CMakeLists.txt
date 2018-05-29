@@ -13,7 +13,7 @@ ENDIF()
 
 GET_FILENAME_COMPONENT(PREFIX_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
 IF(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/build")
-    EXEC_PROGRAM(env "${CMAKE_CURRENT_SOURCE_DIR}/build" ARGS CFLAGS="-fPIC" ${CMAKE_CURRENT_SOURCE_DIR}/hwloc-${VERSION}/configure --prefix=\"${PREFIX_DIR}\" --enable-static --disable-shared --disable-libxml2 --disable-cairo --without-x )
+    EXEC_PROGRAM(env "${CMAKE_CURRENT_SOURCE_DIR}/build" ARGS CFLAGS="-fPIC" ${CMAKE_CURRENT_SOURCE_DIR}/hwloc-${VERSION}/configure --prefix=\"${PREFIX_DIR}\" --enable-static --disable-shared --disable-libxml2 --disable-cairo --without-x --disable-pci --disable-libudev )
 ENDIF()
 
 INCLUDE(ProcessorCount)
