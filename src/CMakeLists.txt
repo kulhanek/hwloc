@@ -19,9 +19,9 @@ INCLUDE(ProcessorCount)
 ProcessorCount(N)
 MESSAGE(">>> Number of CPUs: ${N}") 
 IF(NOT N EQUAL 0)
-    ADD_CUSTOM_TARGET(hwloc ALL make install -j${N} WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
+    ADD_CUSTOM_TARGET(hwloc-build ALL make install -j${N} WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
 ELSE()
-    ADD_CUSTOM_TARGET(hwloc ALL make install WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
+    ADD_CUSTOM_TARGET(hwloc-build ALL make install WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
 ENDIF()
 
 # FIXME
